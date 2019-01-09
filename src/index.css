@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  outline: none;
+}
+body {
+  background: url("hanged.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover
+}
+
+body{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#root {
+display: flex;  
+}
+.main {
+  width: 1374px;
+  margin: auto;
+  
+  align-items: center;
+  justify-content: center;
+}
+
+.table {
+  background-color: rgba(255, 255, 255, 0.733);
+  margin-bottom: 2em;
+}
+
+.header {
+  margin: 3em;
+  
+  background-color: initial;
+}
+
+.header h1 {
+  font-weight: 800;
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.header .slogan {
+  font-size: 1.75em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.logo {
+  font-size: 3em;
+}
+
+.ReactTable {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.footer {
+  text-align: center;
+  font-size: 1.25em;
+  margin-bottom: 2em;
+}
+
+.separator {
+  color: #8ac34a;
+}
+
+.tooltiptext {
+  position: absolute !important;
+  padding: 5px;
+  background: black;
+  overflow:visible !important;
+  z-index: 1000;
+  top: -15px
+}

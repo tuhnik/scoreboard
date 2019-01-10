@@ -46,7 +46,8 @@ class Table extends Component {
       console.log(nr)
       if(nr && nr>0) return nr
     }
-      
+    // after={this.checkCorrectInRow(props.row._original.correctInRow)}
+
     columns = [
       {
             Header: 'Koht',
@@ -58,11 +59,11 @@ class Table extends Component {
         accessor: "name",
       Cell: props => {
         let emoji = emojilist3[props.row.nr - 1]      
-        if(props.row.nr === 1) {return <Emoji className="cell" after={this.checkCorrectInRow(props.row._original.correctInRow)} onMouseOver={()=>this.props.mouseHandler("👑")} before={"👑"} >{props.row.name} 
+        if(props.row.nr === 1) {return <Emoji className="cell" onMouseOver={()=>this.props.mouseHandler("👑")} before={"👑"} >{props.row.name} 
         </Emoji>}
-        if(props.row.nr < 11) {return <Emoji after={this.checkCorrectInRow(props.row._original.correctInRow)} onMouseOver={()=>this.props.mouseHandler(emoji)} before={emoji}>{props.row.name}</Emoji>}
+        if(props.row.nr < 11) {return <Emoji onMouseOver={()=>this.props.mouseHandler(emoji)} before={emoji}>{props.row.name}</Emoji>}
         
-        return <Emoji after={this.checkCorrectInRow(props.row._original.correctInRow)}>{props.row.name}</Emoji>
+        return <Emoji>{props.row.name}</Emoji>
       }
       ,
         filterMethod: (filter, row) =>
@@ -89,6 +90,20 @@ class Table extends Component {
         Header: 'Õigeid',
         accessor: 'correct',
         maxWidth: 100
+      },
+      {
+        Header: () => (
+          <span className="altstar">{"★"}
+          </span>)
+        ,
+        accessor: 'correctInRow',
+        maxWidth: 40,
+        Cell: props => {
+          console.log(props.row.nr)
+          if(props.row.correctInRow){
+            return <div className={props.row.nr < 11?"star":"altstar"}>{props.row.correctInRow}</div>
+          }
+        }
       },
       {
         Header: 'Õigete %',

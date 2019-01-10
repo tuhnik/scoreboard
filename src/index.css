@@ -83,11 +83,11 @@ display: flex;
   color: #8ac34a;
 }
 
-.tooltiptext {
-  position: absolute !important;
-  padding: 5px;
-  background: black;
-  overflow:visible !important;
-  z-index: 1000;
-  top: -15px
+.star {
+  color: #ffeb3b;
+  font-weight: bold;
+}
+
+.altstar {
+  color: orange;
 }

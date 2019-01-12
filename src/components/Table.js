@@ -27,8 +27,7 @@ class Table extends Component {
         fetch(CONFIG.fetchUrl).then((response)=> {
           return response.json();
         }).then((data)=> {
-          this.props.getStats(data.stats)
-        
+          this.props.getStats(data.stats)        
           data = data.scores
           data.sort((a,b) => (a.total < b.total) ? 1 : ((b.total < a.total) ? -1 : 0)); 
           data.map((el, i)=>{
@@ -37,8 +36,7 @@ class Table extends Component {
             el.nr = i + 1
             if(!el.lastWord) el.lastWord = ""
             return el
-          })
-  
+          }) 
           this.setState({data, loading: false})
         });       
       }
@@ -46,7 +44,6 @@ class Table extends Component {
       console.log(nr)
       if(nr && nr>0) return nr
     }
-    // after={this.checkCorrectInRow(props.row._original.correctInRow)}
 
     columns = [
       {

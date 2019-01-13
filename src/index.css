@@ -29,10 +29,10 @@ body{
 #root {
 display: flex;  
 }
+
 .main {
   width: 1374px;
   margin: auto;
-  
   align-items: center;
   justify-content: center;
 }
@@ -43,8 +43,7 @@ display: flex;
 }
 
 .header {
-  margin: 3em;
-  
+  margin: 3em; 
   background-color: initial;
 }
 
@@ -88,6 +87,6 @@ display: flex;
   font-weight: bold;
 }
 
-.altstar {
+.darkstar {
   color: orange;
 }

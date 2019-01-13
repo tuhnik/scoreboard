@@ -90,7 +90,7 @@ class Table extends Component {
       },
       {
         Header: () => (
-          <span className="altstar">{"★"}
+          <span className="darkstar">{"★"}
           </span>)
         ,
         accessor: 'correctInRow',
@@ -98,7 +98,7 @@ class Table extends Component {
         Cell: props => {
           console.log(props.row.nr)
           if(props.row.correctInRow){
-            return <div className={props.row.nr < 11?"star":"altstar"}>{props.row.correctInRow}</div>
+            return <div className={props.row.nr < 11?"star":"darkstar"}>{props.row.correctInRow}</div>
           }
         }
       },

@@ -41,7 +41,6 @@ class Table extends Component {
         });       
       }
     checkCorrectInRow(nr){
-      console.log(nr)
       if(nr && nr>0) return nr
     }
 

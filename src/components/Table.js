@@ -126,16 +126,15 @@ class Table extends Component {
           })
           return date
         },
-        filterMethod: (filter, row) =>{
-          
+        filterMethod: (filter, row) =>{     
           return new Date(row[filter.id]).toLocaleString('et-EE', {
             year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit"
           }).match(filter.value)
         }
        ,
-      },
-      
+      },   
     ]
+    
     render() {
       
       return (

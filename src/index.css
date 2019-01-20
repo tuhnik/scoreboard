@@ -17,7 +17,7 @@ code {
   outline: none;
 }
 body {
-  background: url("hanged.png");
+  background: url("images/hanged.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover

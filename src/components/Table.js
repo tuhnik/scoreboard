@@ -49,7 +49,7 @@ class Table extends Component {
         Header: 'Nimi',
         accessor: "name",
       Cell: props => {
-        let emoji = emojilist3[props.row.nr - 1]      
+        let emoji = emojilist[props.row.nr - 1]      
         if(props.row.nr === 1) {return <Emoji className="cell" onMouseOver={()=>this.props.mouseHandler("👑")} before={"👑"} >{props.row.name} 
         </Emoji>}
         if(props.row.nr < 11) {return <Emoji onMouseOver={()=>this.props.mouseHandler(emoji)} before={emoji}>{props.row.name}</Emoji>}
@@ -177,4 +177,4 @@ class Table extends Component {
 
   export default Table;
 
-let emojilist3 = "👑 🐮 🐷 🐑 🐔 🦔 🐭 🐸 🐛 🥦".split(" ")
+let emojilist = "👑 🐮 🐷 🐑 🐔 🦔 🐭 🐸 🐛 🥦".split(" ")

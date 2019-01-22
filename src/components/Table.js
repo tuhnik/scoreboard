@@ -177,16 +177,4 @@ class Table extends Component {
 
   export default Table;
 
-function stringToIntHash(str, upperbound, lowerbound) {
-    let result = 0;
-    for (let i = 0; i < str.length; i++) {
-      result = result + str.charCodeAt(i);
-    }
-  
-    if (!lowerbound) lowerbound = 0;
-    if (!upperbound) upperbound = 500;
-  
-    return (result % (upperbound - lowerbound)) + lowerbound;
-  }
-
 let emojilist3 = "👑 🐮 🐷 🐑 🐔 🦔 🐭 🐸 🐛 🥦".split(" ")

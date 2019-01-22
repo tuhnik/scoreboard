@@ -17,8 +17,7 @@ position: relative;
   padding-left: 0.25em;
   opacity: 0.2
 }
-
-`;
+`
 
 class Table extends Component {
     state = {data: [], loading: true}
@@ -91,7 +90,6 @@ class Table extends Component {
         accessor: 'correctInRow',
         maxWidth: 40,
         Cell: props => {
-          console.log(props.row.nr)
           if(props.row.correctInRow){
             return <div className={props.row.nr < 11?"star":"darkstar"}>{props.row.correctInRow}</div>
           }

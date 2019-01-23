@@ -52,14 +52,11 @@ class Table extends Component {
         let emoji = emojilist[props.row.nr - 1]      
         if(props.row.nr === 1) {return <Emoji className="cell" onMouseOver={()=>this.props.mouseHandler("👑")} before={"👑"} >{props.row.name} 
         </Emoji>}
-        if(props.row.nr < 11) {return <Emoji onMouseOver={()=>this.props.mouseHandler(emoji)} before={emoji}>{props.row.name}</Emoji>}
-        
-        return <Emoji>{props.row.name}</Emoji>
+        if(props.row.nr < 11) {return <Emoji onMouseOver={()=>this.props.mouseHandler(emoji)} before={emoji}>{props.row.name}</Emoji>}  return <Emoji>{props.row.name}</Emoji>
       }
       ,
         filterMethod: (filter, row) =>
-        row[filter.id].toLowerCase().match(filter.value.toLowerCase()),
- 
+        row[filter.id].toLowerCase().match(filter.value.toLowerCase())
        }, 
        
        {
@@ -98,14 +95,12 @@ class Table extends Component {
       {
         Header: 'Õigete %',
         accessor: 'percentage',
-        maxWidth: 100
-        
+        maxWidth: 100      
       },
       {
         Header: 'Sõnu',
         accessor: 'totalWords',
-        maxWidth: 100
-        
+        maxWidth: 100     
       },
       {
         Header: 'Viimane sõna',

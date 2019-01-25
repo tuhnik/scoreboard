@@ -10,13 +10,6 @@ position: relative;
 &:before {
   content: '${props => props.before}';
 }
-&:after {
-  position: absolute;
-  left: 0;
-  content: '${props => props.after && "👍" +props.after}';
-  padding-left: 0.25em;
-  opacity: 0.2
-}
 `
 
 class Table extends Component {

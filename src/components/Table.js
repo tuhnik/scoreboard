@@ -5,7 +5,7 @@ import 'react-table/react-table.css'
 import matchSorter from 'match-sorter'
 import styled from 'styled-components'
 
-const Emoji = styled.div`
+const WithEmoji = styled.div`
 position: relative;
 &:before {
   content: '${props => props.before}';
@@ -42,10 +42,10 @@ class Table extends Component {
         Header: 'Nimi',
         accessor: "name",
       Cell: props => {
-        let emoji = emojilist[props.row.nr - 1]      
-        if(props.row.nr === 1) {return <Emoji className="cell" onMouseOver={()=>this.props.mouseHandler("👑")} before={"👑"} >{props.row.name} 
-        </Emoji>}
-        if(props.row.nr < 11) {return <Emoji onMouseOver={()=>this.props.mouseHandler(emoji)} before={emoji}>{props.row.name}</Emoji>}  return <Emoji>{props.row.name}</Emoji>
+        let emoji = emojilist[props.row.nr - 1] 
+        if(props.row.nr < 11) {return <WithEmoji onMouseOver={()=>this.props.mouseHandler(emoji)} before={emoji}>{props.row.name}</WithEmoji>} 
+    
+        return props.row.name
       }
       ,
         filterMethod: (filter, row) =>

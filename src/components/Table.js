@@ -22,8 +22,7 @@ class Table extends Component {
           data = data.scores
           data.sort((a,b) => (a.total < b.total) ? 1 : ((b.total < a.total) ? -1 : 0)); 
           data.map((el, i)=>{
-            el.percentage = Math.round((100/(el.correct + el.wrong) * el.correct * 10)) / 10
-            
+            el.percentage = Math.round((100/(el.correct + el.wrong) * el.correct * 10)) / 10          
             el.nr = i + 1
             if(!el.lastWord) el.lastWord = ""
             return el

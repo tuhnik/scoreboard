@@ -69,20 +69,25 @@ class Table extends Component {
     {
       Header: "Punkte",
       accessor: "total",
+      defaultSortDesc: true,
+
       maxWidth: 100
     },
     {
       Header: "Rekord",
       accessor: "max",
+      defaultSortDesc: true,
       maxWidth: 100
     },
     {
       Header: "Valesid",
       accessor: "wrong",
+      defaultSortDesc: true,
       maxWidth: 100
     },
     {
       Header: "Õigeid",
+      defaultSortDesc: true,
       accessor: "correct",
       maxWidth: 100
     },
@@ -90,6 +95,7 @@ class Table extends Component {
       Header: () => <span className="darkstar">{"★"}</span>,
       accessor: "correctInRow",
       maxWidth: 40,
+      defaultSortDesc: true,
       Cell: props => {
         if (props.row.correctInRow) {
           return (
@@ -102,12 +108,22 @@ class Table extends Component {
     },
     {
       Header: "Õigete %",
-      accessor: "percentage",
-      maxWidth: 100
+      id: "percentage",
+      accessor: d => d,
+      Cell: row => row.original.percentage,
+      maxWidth: 100,
+      defaultSortDesc: true,
+      sortMethod: (a, b) => {
+        if (a.percentage === b.percentage) {
+          return a.total > b.total ? 1 : -1;
+        }
+        return a.percentage > b.percentage ? 1 : -1;
+      }
     },
     {
       Header: "Sõnu",
       accessor: "totalWords",
+      defaultSortDesc: true,
       maxWidth: 100
     },
     {
@@ -121,6 +137,7 @@ class Table extends Component {
       Header: "Viimati",
       accessor: "lastPlayed",
       maxWidth: 200,
+      defaultSortDesc: true,
       Cell: props => {
         let date = new Date(props.row.lastPlayed).toLocaleString("et-EE", {
           year: "numeric",
@@ -152,6 +169,7 @@ class Table extends Component {
       !this.state.loading && (
         <ReactTable
           previousText="Eelmine"
+          defaultPageSize={100}
           nextText="Järgmine"
           pageText="Lehekülg"
           loadingText="Laadimine..."
@@ -159,6 +177,7 @@ class Table extends Component {
           rowsText="rida"
           ofText="Kokku:"
           loading={this.state.loading}
+          defaultSorted={[{id:"nr", asc: true}]}
           getTrProps={(state, rowInfo, column) => {
             if (rowInfo && rowInfo.row.nr === 1) {
               return {
